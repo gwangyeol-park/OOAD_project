@@ -1,0 +1,84 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 100%;
+    height: 30vh;
+    background: #eee;
+    position: relative;
+    padding: 50px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.card-title {
+    font-size: 50px;
+    position: absolute;
+}
+
+.modal-container  {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-detail {
+    box-sizing: border-box;
+    background: #fff;
+    width: 700px;
+    height: 500px;
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.detail-title {
+    position: absolute;
+    display: inline-block;
+    top: 30px;
+    font-size: 50px;
+}
+
+.detail-author {
+    position: absolute;
+    display: inline-block;
+    top: 80px;
+    right: 30px;
+}
+
+.detail-location {
+    position: absolute;
+    top: 100px;
+}
+
+.detail-wage {
+    position: absolute;
+    top: 130px
+}
+
+.detail-date {
+    position: absolute;
+    top: 160px;
+}
+
+.detail-time {
+    position: absolute;
+    top: 190px;
+}
+
+.join-btn {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    bottom: 30px;
+    left: 250px;
+}
