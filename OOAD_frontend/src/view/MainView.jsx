@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Header from '../component/Header'
 import '../asset/css/MainView.css'
 import ItemService from '../service/ItemService';
+import UserService from '../service/UserService';
 
 const MainView = () => {
 
@@ -29,12 +30,14 @@ const MainView = () => {
     }
 
     const joinButtonHandle = async (e) => {
-        let user_email = sessionStorage.getItem("user_name");
+        let user_email = sessionStorage.getItem("user_email");
         if(user_email !== 'null'){
           let res = await ItemService.getItemById(e.target.id);
           let updateItem = res.data;
-          if(!Object.keys(updateItem.userList).includes(user_email)){
-            updateItem.userList[user_email] = "0";
+          
+          let user_name = await UserService.getNameByEmail(user_email);
+          if(!Object.keys(updateItem.userList).includes(user_name.data)){
+            updateItem.userList[user_name.data] = "0";
             await ItemService.updateItem(updateItem);
             alert("신청되었습니다!");
           }

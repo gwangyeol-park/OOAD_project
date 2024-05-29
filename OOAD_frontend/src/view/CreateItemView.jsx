@@ -1,18 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../component/Header'
 import ItemService from '../service/ItemService';
 import '../asset/css/CreateItemView.css'
+import UserService from '../service/UserService';
 
 const CreateItemView = () => {
 
-    let user_name = sessionStorage.getItem("user_name");
-
     const [title, setTitle] = useState("");
-    const [author, setAuthor] = useState(user_name);
+    const [author, setAuthor] = useState("");
     const [location, setLocation] = useState("");
     const [wage, setWage] = useState("");
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
+
+    useEffect(() => {
+        const fetchAuthor = async () => {
+            const email = sessionStorage.getItem("user_email");
+            const name = await UserService.getNameByEmail(email);
+            
+            setAuthor(name.data);
+        };
+        fetchAuthor();
+    }, []);
 
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
@@ -35,7 +44,7 @@ const CreateItemView = () => {
     }
 
     const handleTimeChange = (e) => {
-        setDate(e.target.value);
+        setTime(e.target.value);
     }
 
 

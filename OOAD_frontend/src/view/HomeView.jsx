@@ -28,10 +28,10 @@ const HomeView = () => {
           age: "",
           gender: false
         }
-        sessionStorage.setItem("user_name", null);
+        sessionStorage.setItem("user_email", null);
         UserService.login(user).then((res) => {
           if(res.data){
-            sessionStorage.setItem("user_name", user.email);
+            sessionStorage.setItem("user_email", user.email);
             alert("로그인 성공!");
             navigate('/main');
           }

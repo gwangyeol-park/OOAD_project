@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className='nav'>
         <Link to="/">
-            <span className='title'>title</span>
+            <span className='title'>Parti</span>
         </Link>
         <Link to="/create">
             <span className='create'>글 쓰기</span>

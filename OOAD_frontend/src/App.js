@@ -4,6 +4,7 @@ import HomeView from './view/HomeView'
 import CreateItemView from './view/CreateItemView'
 import "./asset/css/Reset.css"
 import MainView from './view/MainView'
+import SignupView from './view/SignupView'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path="/" element={<HomeView/>} />
         <Route path="/main" element={<MainView/>} />
         <Route path="/create" element={<CreateItemView/>} />
+        <Route path="signup" element={<SignupView/>} />
 
       </Routes>
     </BrowserRouter>
